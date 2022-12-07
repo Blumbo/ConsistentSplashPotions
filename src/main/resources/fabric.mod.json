@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "consistentpots",
+  "version": "${version}",
+  "name": "ConsistentSplashPotions",
+  "description": "",
+  "authors": [
+    "Blumbo"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/consistentpots/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.blumbo.consistentpots.client.ConsistentPotsClient"
+    ],
+    "main": [
+      "net.blumbo.consistentpots.ConsistentPots"
+    ]
+  },
+  "mixins": [
+    "consistentpots.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.11",
+    "fabric": "*",
+    "minecraft": "1.19.2"
+  }
+}
