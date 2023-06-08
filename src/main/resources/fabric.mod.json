@@ -12,9 +12,6 @@
   "icon": "assets/consistentpots/icon.png",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "net.blumbo.consistentpots.client.ConsistentPotsClient"
-    ],
     "main": [
       "net.blumbo.consistentpots.ConsistentPots"
     ]
