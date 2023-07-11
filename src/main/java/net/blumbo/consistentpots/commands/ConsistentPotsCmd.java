@@ -23,13 +23,13 @@ public class ConsistentPotsCmd {
                                 CommandRegistryAccess registryAccess,
                                 CommandManager.RegistrationEnvironment environment) {
 
-    dispatcher.register(CommandManager.literal(cmd).executes(ConsistentPotsCmd::info)
+    dispatcher.register(CommandManager.literal(cmd).requires(source -> source.hasPermissionLevel(2))
+        .executes(ConsistentPotsCmd::info)
             .then(CommandManager.literal(setArg).executes(ConsistentPotsCmd::get)
-                    .then(CommandManager.argument("value", IntegerArgumentType.integer(0, 100))
-                            .executes(ConsistentPotsCmd::set))
+                .then(CommandManager.argument("value", IntegerArgumentType.integer(0, 100))
+                    .executes(ConsistentPotsCmd::set))
             )
-    );
-
+        );
     }
 
     private static int info(CommandContext<ServerCommandSource> context) {
